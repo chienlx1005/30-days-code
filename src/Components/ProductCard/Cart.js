@@ -25,7 +25,10 @@ function Cart() {
     <>
       <div className="card">
         <div className="card_heart">
-          <span className={check ? "active" : ""} onClick={() => handleCheck()}>
+          <span
+            className={check ? "activeHeart" : ""}
+            onClick={() => handleCheck()}
+          >
             <BiHeart />
           </span>
           <span className="cart_shop">

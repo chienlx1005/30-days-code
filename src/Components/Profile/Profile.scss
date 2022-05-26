@@ -1,0 +1,65 @@
+$color: #f2726a;
+
+.profile {
+  width: 300px;
+  height: 400px;
+  margin: 120px auto;
+  background-color: #242628;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  p {
+    color: $color;
+  }
+  h2 {
+    margin-top: 30px;
+  }
+  .profile_img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid $color;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: 0.5s;
+    transform: translateY(25px);
+    &:hover {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      transform: translateY(0);
+      border: none;
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+    }
+  }
+  .social {
+    margin: 25px 0;
+    a {
+      color: #fff;
+      margin: 25px 20px;
+      font-size: 20px;
+      &:hover {
+        color: $color;
+      }
+    }
+  }
+  button {
+    width: 150px;
+    height: 40px;
+    border: 1px solid $color;
+    background: transparent;
+    color: #fff;
+    border-radius: 10px;
+    transition: 0.5s;
+    &:hover {
+      cursor: pointer;
+      background-color: $color;
+    }
+  }
+}

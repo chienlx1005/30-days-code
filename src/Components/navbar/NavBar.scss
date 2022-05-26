@@ -1,0 +1,19 @@
+$color: #242628;
+.active {
+  background-color: #3d8880;
+  border-radius: 10px;
+}
+.navBar {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background-color: $color;
+  a {
+    padding: 0 15px;
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.5s;
+  }
+}
