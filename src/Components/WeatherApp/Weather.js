@@ -14,7 +14,7 @@ function Weather() {
   const API_KEY = "fa574ade9c12b3365e10ce06f8a5a0cf";
 
   const [loading, setLoading] = useState(true);
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Thai nguyen");
   const [data, setData] = useState([]);
   const [image, setImage] = useState("./assets/img/weather1.jpg");
 
@@ -32,19 +32,19 @@ function Weather() {
           setData(dt);
           setLoading(false);
 
-          console.log(dt);
+          // console.log(dt);
         })
         .catch(function (error) {
           // handle error
           //   console.log(error);
         });
     }
-
     fetchApi();
   }, [location]);
   const handleInput = (e) => {
     // console.log(e.target.value);
     setLocation(e.target.value);
+    setLoading(true);
     setImage("./assets/img/weather2.jpg");
   };
   return (
