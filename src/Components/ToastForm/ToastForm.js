@@ -9,6 +9,11 @@ function ToastForm() {
   const [pass, setPass] = useState("");
   const [repass, setRepass] = useState("");
 
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
   const handleUser = (e) => {
     setUsername(e.target.value);
   };
@@ -23,11 +28,11 @@ function ToastForm() {
   };
   const handleSubmit = () => {
     if (!username) {
-      toast.error("User name is empty!");
+      toast.error("User name is not invalid!");
       return;
     }
-    if (!email) {
-      toast.error("Email is empty!");
+    if (!validateEmail(email)) {
+      toast.error("Email is not valid!");
       return;
     }
     if (!pass) {
@@ -35,7 +40,8 @@ function ToastForm() {
       return;
     }
     if (!repass) {
-      toast.error("Repassword is empty!");
+      toast.error("Repassword is not invalid!");
+
       return;
     }
     if (pass !== repass) {
@@ -44,6 +50,10 @@ function ToastForm() {
     }
     // code bla bla
     toast.success("Sigun success");
+    setUsername("");
+    setEmail("");
+    setPass("");
+    setRepass("");
   };
   return (
     <>
@@ -55,7 +65,7 @@ function ToastForm() {
               type="text"
               value={username}
               onChange={(e) => handleUser(e)}
-              placeholder="User name"
+              placeholder="User name from 3 to 6 character"
             />
             <input
               type="email"
@@ -67,7 +77,7 @@ function ToastForm() {
               type="password"
               value={pass}
               onChange={(e) => handlePass(e)}
-              placeholder="Password"
+              placeholder="Password from 3 to 6 character"
             />
             <input
               type="password"

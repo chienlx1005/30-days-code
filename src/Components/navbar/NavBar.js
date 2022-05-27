@@ -9,6 +9,7 @@ function NavBar() {
         <NavLink to={"/productCart"}>Product Cart</NavLink>
         <NavLink to={"/profile"}>Profile</NavLink>
         <NavLink to={"/toast"}>Toast Form</NavLink>
+        <NavLink to={"/weather"}>Weather App</NavLink>
       </div>
     </>
   );

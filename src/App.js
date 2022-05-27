@@ -5,6 +5,7 @@ import Profile from "./Components/Profile/Profile";
 import Home from "./Components/pages/Home";
 import NavBar from "./Components/navbar/NavBar";
 import ToastForm from "./Components/ToastForm/ToastForm";
+import Weather from "./Components/WeatherApp/Weather";
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
           <Route path="/productCart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/toast" element={<ToastForm />} />
+          <Route path="/weather" element={<Weather />} />
         </Routes>
       </BrowserRouter>
     </div>
